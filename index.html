@@ -1,16 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tienda Libre Demo</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ddd;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .buttonSubmit {
+      width: 100%;
+      padding: 12px;
+      background-color: #3483fa;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+
+
+    .help-link {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .help-link a {
+      text-decoration: none;
+      color: #3483fa;
+    }
+  </style>
 </head>
+
 <body>
   <header>
     <div class="header-top">
-      <div class="logo">Tienda<span>Libre</span></div>
-      <input id="searchInput" type="text" placeholder="Buscar productos, marcas y más..."/>
+      <div class="logo"><img src="mercado-libre-logo.webp" alt="Mercado Libre Logo" width="120"></div>
+      <input id="searchInput" type="text" placeholder="Buscar productos, marcas y más..." />
       <button id="searchBtn">Buscar</button>
       <div class="user-links">
         <a href="#">Crear cuenta</a>
@@ -28,18 +72,25 @@
   </header>
 
   <section class="banner">
-    <img src="https://via.placeholder.com/1200x300/ffe600/333?text=Banner+Promocional" alt="Banner">
+    <img src="banner.webp" alt="Banner">
   </section>
 
-  <section class="daily-deals">
-    <h2>Ofertas del día</h2>
-    <div class="products" id="dealsContainer"></div>
-  </section>
+  <div class="container">
+    <h2>Ingresa tu e-mail o teléfono para iniciar sesión</h2>
+    <form id="loginForm">
+      <input type="text" id="email" placeholder="E-mail o teléfono" required>
+      <input type="password" id="password" placeholder="Contraseña" required>
+      <button class="buttonSubmit" type="submit">Continuar</button>
+    </form>
 
-  <section class="recommended">
-    <h2>Te podría interesar</h2>
-    <div class="products" id="recommendedContainer"></div>
-  </section>
+    <div class="help-link">
+      <a href="#">Crear cuenta</a> | <a href="#">Iniciar sesión con Google</a>
+    </div>
+    <div class="help-link">
+      <a href="#">Tengo un problema de seguridad</a><br>
+      <a href="#">Necesito ayuda</a>
+    </div>
+  </div>
 
   <footer>
     <div class="footer-links">
@@ -59,4 +110,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
